@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work3</title>
+    <link rel="stylesheet" type="text/css" href="./navigation.css">
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div class="nav" id="all">
+        <img src="https://www.xmu.edu.cn/images/logo2.png">
+        <span>首页</span>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(0,0)" @mouseleave="mouseChange(0,1)">厦大概览</span>
+            <ul class="dropdown-content" :style="{display: dict[0].name}">
+                <li>学校简介</li>
+                <li>厦门大学章程</li>
+                <li>校主生平</li>
+                <li>现任领导</li>
+                <li>历任领导</li>
+                <li>组织机构</li>
+                <li>学校标识</li>
+                <li>学院院徽</li>
+                <li>网上展馆</li>
+                <li>校园地图</li>
+                <li>校园风光</li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(1,0)" @mouseleave="mouseChange(1,1)">学部院系</span>
+            <ul class="dropdown-content" :style="{display: dict[1].name}">
+                <li>人文与艺术学部</li>
+                <li>社会科学学部</li>
+                <li>自然科学学部</li>
+                <li>工程技术学部</li>
+                <li>医学与生命科学学部</li>
+                <li>地球科学与技术学部</li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(2,0)" @mouseleave="mouseChange(2,1)">人才培养</span>
+            <ul class="dropdown-content" :style="{display:dict[2].name}">
+                <li>学科</li>
+                <li>师资</li>
+                <li>本科生教育</li>
+                <li>研究生教育</li>
+                <li>继续教育与网络教育</li>
+                <li>国际学生教育</li>
+                <li>管理</li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(3,0)" @mouseleave="mouseChange(3,1)">学术科研</span>
+            <ul class="dropdown-content" :style="{display:dict[3].name}">
+                <li>自然科学与技术</li>
+                <li>人文与社会科学</li>
+                <li>研究机构</li>
+                <li>博士后科研流动站</li>
+                <li>厦门大学学报（自然报）</li>
+                <li>厦门大学学报（哲社报）</li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(4,0)" @mouseleave="mouseChange(4,1)">社会服务</span>
+            <ul class="dropdown-content" :style="{display:dict[4].name}">
+                <li>成果产业化</li>
+                <li>大学科技园</li>
+                <li>战略合作</li>
+                <li>后勤服务</li>
+                <li>会议服务</li>
+                <li>出版服务</li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(5,0)" @mouseleave="mouseChange(5,1)">大学文化</span>
+            <ul class="dropdown-content" :style="{display:dict[5].name}">
+                <li>团委</li>
+                <li>学生委员会</li>
+                <li>研究生会</li>
+                <li>社团联合会</li>
+                <li>校园活动</li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(6,0)" @mouseleave="mouseChange(6,1)">合作交流</span>
+            <ul class="dropdown-content" :style="{display:dict[6].name}">
+                <li>国际合作与交流</li>
+                <li>港澳台合作与交流</li>
+                <li>孔子学院</li>
+                <li>留学服务</li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(7,0)" @mouseleave="mouseChange(7,1)">招生就业</span>
+            <ul class="dropdown-content" :style="{display:dict[7].name}">
+                <li>招生</li>
+                <li>就业</li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <span @mousemove="mouseChange(8,0)" @mouseleave="mouseChange(8,1)">人才招聘</span>
+            <ul class="dropdown-content" :style="{display:dict[8].name}">
+                <li>人才招聘网</li>
+                <li>博士后</li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var myVue = new Vue({
+            el: "#all",
+            data: {
+                dict: [{
+                    name: 'none'
+                }, {
+                    name: 'none'
+                }, {
+                    name: 'none'
+                }, {
+                    name: 'none'
+                }, {
+                    name: 'none'
+                }, {
+                    name: 'none'
+                }, {
+                    name: 'none'
+                }, {
+                    name: 'none'
+                }, {
+                    name: 'none'
+                }]
+            },
+            methods: {
+                mouseChange: function(i, j) {
+                    if (j == 0) {
+                        this.dict[i].name = 'block';
+                    } else {
+                        this.dict[i].name = 'none';
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
